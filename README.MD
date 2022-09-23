@@ -1,2 +1,2 @@
-Allocate the memory and keep physical tool.
+This software is allocate the memory and keep on physical device.
 
