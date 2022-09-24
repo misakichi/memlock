@@ -3,11 +3,29 @@
 
 using namespace System;
 namespace memlock {
+	class NativeAlloc;
+
+	public ref class GpuMemoryInfomation {
+	public:
+		System::String^ name;
+		IntPtr videoMemory;
+	};
+
 	public ref class Allocator
 	{
 	public:
-		static IntPtr alloc(IntPtr ptr, IntPtr size);
-		static bool free(IntPtr lpAddress, IntPtr dwSize);
-		static void setup(Diagnostics::Process^ proc);
+		Allocator();
+		bool initilalize(Diagnostics::Process^ proc);
+		bool finalize();
+
+		IntPtr alloc(IntPtr size);
+		bool free(IntPtr ptr, IntPtr dwSize);
+
+		IntPtr gpuAlloc(int gpuIndex, IntPtr size);
+
+		System::Collections::Generic::List<GpuMemoryInfomation^>^ getGpuInfomations();
+
+	private:
+		NativeAlloc* m_allocator;
 	};
 }

@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs/memlock
+/allocater/Debug
+/allocater/x64
+/memlock/bin/x64
+/memlock/obj/x64
+/x64
+/allocater/allocater.vcxproj.user
+/memlock/memlock.csproj.user
