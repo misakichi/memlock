@@ -2,13 +2,18 @@
 #include <stdint.h>
 #include <string>
 
-struct GpuInfomation 
-{
-	std::wstring descName;
-	size_t videoMemory;
-};
-
 namespace memlock {
+	struct GpuInfomation 
+	{
+		std::wstring descName;
+		size_t videoMemory;
+	};
+	struct AllocInfomation {
+		void* addr;
+		size_t size;
+		int device;
+	};
+
 	class MemlockNativeImpl;
 	class NativeAlloc
 	{

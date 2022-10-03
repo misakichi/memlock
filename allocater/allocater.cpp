@@ -1,9 +1,13 @@
-#include "pch.h"
 
 #include "allocater.h"
 #include "nativealloc.h"
 
 struct Context;
+
+void cliDebugOut(const wchar_t* str)
+{
+	System::Diagnostics::Trace::TraceInformation(gcnew System::String(str));
+}
 namespace memlock {
 	Allocator::Allocator()
 	{

@@ -10,3 +10,4 @@
 /x64
 /allocater/allocater.vcxproj.user
 /memlock/memlock.csproj.user
+/allocater/VulkanSDK
